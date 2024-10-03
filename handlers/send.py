@@ -48,7 +48,7 @@ def router(sheet):
         await state.set_state(MailingState.waiting_for_confirmation)
 
     # Список пользователей (можно получать его из Google Sheets)
-    users = ["1089398402", "1712657654"]
+    users = ["1234567890", "0987654321"]
 
     @new_router.callback_query(and_f(F.data.startswith("confirm"), StateFilter(MailingState.waiting_for_confirmation)))
     async def confirm_mailing(call: CallbackQuery, state: FSMContext, bot: Bot) -> None:
